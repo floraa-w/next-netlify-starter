@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from 'next/head';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
+import Banner from '@components/Banner'; // 👈 Import the banner
 
 export default function Home() {
   return (
@@ -9,6 +10,8 @@ export default function Home() {
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Banner /> {/* 👈 Add banner at top */}
 
       <main>
         <Header title="Welcome to my app!" />
@@ -19,5 +22,5 @@ export default function Home() {
 
       <Footer />
     </div>
-  )
+  );
 }
