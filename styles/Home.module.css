@@ -1,0 +1,60 @@
+.topSection {
+    padding: 1rem 1rem 8rem 1rem;
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .topSection h1 {
+    font-size: 2rem;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .topSection strong {
+    font-size: 3rem;
+    display: block;
+    text-transform: uppercase;
+    margin: -0.7rem 0 1rem 0;
+  }
+  
+  .topSection p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #171716;
+    background-color: transparent;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .cta:hover {
+    background-color: #171716;
+    color: white;
+  }
+  
+  .dividerBottom {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+  
+  .dividerBottom svg {
+    position: relative;
+    display: block;
+    width: calc(147% + 1.3px);
+    height: 300px;
+  }
+  
+  #squiggleAlt {
+    visibility: hidden;
+  }
+  
