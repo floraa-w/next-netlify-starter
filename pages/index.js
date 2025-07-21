@@ -4,19 +4,24 @@ import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
-import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
-
-gsap.registerPlugin(MorphSVGPlugin);
 
 export default function Home() {
   useEffect(() => {
-    gsap.to('#squiggle', {
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power2.inOut',
-      morphSVG: '#squiggleAlt'
-    });
+    // Run only in the browser
+    if (typeof window !== 'undefined') {
+      import('gsap/MorphSVGPlugin').then((module) => {
+        const MorphSVGPlugin = module.MorphSVGPlugin || module.default;
+        gsap.registerPlugin(MorphSVGPlugin);
+
+        gsap.to('#squiggle', {
+          duration: 2,
+          repeat: -1,
+          yoyo: true,
+          ease: 'power2.inOut',
+          morphSVG: '#squiggleAlt'
+        });
+      });
+    }
   }, []);
 
   return (
