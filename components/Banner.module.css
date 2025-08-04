@@ -1,68 +1,108 @@
+/* ===================
+   Header Styles
+=================== */
 .header {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
+  width: 100%;
+  padding: 0 20px;
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================
+   Container
+=================== */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ===================
+   Logo
+=================== */
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.logoImg {
+  display: flex;
+  height: 100%;
+  max-height: 120px;
+  padding: 10px;
+  width: auto;
+  object-fit: contain;
+  margin-top: 8px;
+}
+
+/* ===================
+   Nav Links
+=================== */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* This is the toggle class added by JS */
+.nav.show {
+  display: flex;
+}
+
+/* ===================
+   Hamburger Button
+=================== */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===================
+   Responsive Styles
+=================== */
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .nav {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
-    padding: 0px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: 60px; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    margin-top: 10px;
   }
-  
+
   .navContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
+    justify-content: space-between;
   }
-  
-  .nav a {
-    margin-left: 45px;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.95rem;
-    font-family: 'Quicksand', sans-serif;
-  }
-  
-  .nav a:hover {
-    color: #436FAA;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .nav {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-    }
-  
-    .nav a {
-      margin-left: 0;
-    }
-  }
-
-  .logoImg {
-
-    display: flex;
-    height: 100%;
-    max-height: 120px;
-    padding: 10px;
-    width: auto;
-    object-fit: contain;
-    margin-top: 8px;
-  }
-  
+}
