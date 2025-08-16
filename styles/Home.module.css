@@ -1,60 +1,196 @@
 .topSection {
     padding: 1rem 1rem 8rem 1rem;
     max-width: 48rem;
+    padding-top: 15vh; 
     margin: 0 auto;
     text-align: center;
   }
   
-  .topSection h1 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-family: 'Quicksand', sans-serif;
+.topSection h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-family: 'Quicksand', sans-serif;
+}
+  
+.topSection strong {
+  font-size: clamp(2rem, 6vw, 3rem);
+  display: block;
+  text-transform: uppercase;
+  margin: -0.7rem 0 1rem 0;
+}
+  
+.topSection p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+  
+.cta {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #171716;
+  background-color: transparent;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+  
+.cta:hover {
+  background-color: #171716;
+  color: white;
+}
+  
+.dividerBottom {
+  position: relative;
+  width: 100%;
+  height: 53vh;   
+  margin-top: -150px; 
+  z-index: 2;
+  overflow: hidden;
+  line-height: 0;
+}
+  
+.dividerBottom svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg); 
+}
+  
+#squiggleAlt {
+  visibility: hidden;
+}
+
+.aboutContent{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "hand text";   /* ⬅️ force left/right */
+  align-items:center;
+  gap:3rem;
+  max-width:1000px;
+  margin:0 auto;
+  padding:2rem;
+  justify-items:stretch;               /* each column manages its own content */
+}
+  
+.handBox{
+  grid-area: hand;                     /* ⬅️ left column */
+  position:relative;
+  width:100%;
+  height:22vmin;                       /* enough for the fan */
+  justify-self:stretch;        
+  display: grid;         
+  place-items: center;
+}
+.hand{
+  position:static;
+  left:auto;
+  transform:translateX(-20%);
+  display:grid;
+  grid-template-columns:repeat(5, 0);
+  gap:0;
+  margin: 0 auto;
+  width: max-content;
+  justify-items:center;
+  justify-self: start;
+}
+  
+.card {
+  position: relative;
+  width: 16vmin;
+  height: 19vmin;
+  transform-origin: 50% 100%;
+  transform: rotate(calc((var(--i) - 2) * 15deg));
+  border-radius: 1vmin;
+  border: 1px solid currentColor;
+  overflow: visible;
+}
+
+.cardImg {
+  width: 100% !important;      /* fill the card container */
+  height: 100% !important;     /* fill the card container */
+  object-fit: cover;           /* crop to fill without distortion */
+  display: block;
+  border-radius: 1vmin;
+  border: 1px solid currentColor;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) rotate(calc((var(--i) - 2) * 15deg));
+  transition: 200ms ease-out;
+}
+
+
+.aboutContent:hover .hand {
+  grid-template-columns: repeat(5, 16vmin);
+  gap: 2vmin;
+  margin-left: 0;                 /* remove pre-fan nudge */
+  justify-self: center;
+  transform: none;
+}
+  
+.aboutContent:hover .cardImg {
+  transform: translateX(-50%) rotate(0);
+}
+  
+.card:hover .cardImg {
+  transform: translateX(-50%) rotate(0) translateY(-20%);
+}
+
+.aboutText {
+  flex: 1;
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+  grid-area:text;
+  text-align: left;
+}
+
+.homeaboutme {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+  
+.homeaboutme h2 {
+  font-size: 1.75rem;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 2rem;
+  text-align: center;
+
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    flex-direction: column;
+    align-items: center;
   }
   
-  .topSection strong {
-    font-size: clamp(2rem, 6vw, 3rem);
-    display: block;
-    text-transform: uppercase;
-    margin: -0.7rem 0 1rem 0;
+  .homeaboutme h2 {
+    text-align: center;
   }
   
-  .topSection p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+  .aboutText {
+    text-align: center;
   }
+}
+.aboutContent:hover {
+  grid-template-columns: 1fr;    /* switch to one column */
+  grid-template-areas:
+    "hand"
+    "text";
+  justify-items: center; 
+  max-width: none;        
+  width: 100%;
+}
   
-  .cta {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid #171716;
-    background-color: transparent;
-    border-radius: 35px;
-    cursor: pointer;
-    transition: 0.2s ease;
+  
+.aboutContent:hover .aboutText {
+  text-align: center;             /* center text below hand */
+}
+.aboutContent:hover .handBox{
+      justify-self: center;
+      width: 100%;
+    display: grid;
+    place-items: center;
   }
-  
-  .cta:hover {
-    background-color: #171716;
-    color: white;
-  }
-  
-  .dividerBottom {
-    position: absolute;
-    bottom: 80px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-  }
-  
-  .dividerBottom svg {
-    position: relative;
-    display: block;
-    width: calc(147% + 1.3px);
-    height: 300px;
-  }
-  
-  #squiggleAlt {
-    visibility: hidden;
-  }
-  

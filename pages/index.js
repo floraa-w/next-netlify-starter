@@ -67,6 +67,32 @@ export default function Home() {
         </svg>
       </div>
 
+      <section className={styles.homeaboutme}>
+  
+        <h2>About Me</h2>
+        <div className={styles.aboutContent}>
+          <div className={styles.handBox}>
+            <div className={styles.hand}>
+              <div className={styles.card} style={{"--i":0}}>
+                <img className={styles.cardImg} src = "/IMG_2826.JPG" alt="Card 1"  />
+              </div>
+              <div className={styles.card} style={{"--i":1}}>
+                <img className={styles.cardImg} src = "/IMG_4620.JPG" alt="Card 2"  />
+              </div>
+              <div className={styles.card} style={{"--i":2}}>
+                <img className={styles.cardImg} src = "/IMG_4771.JPG" alt="Card 2"  />
+              </div>
+              <div className={styles.card} style={{"--i":3}} />
+              <div className={styles.card} style={{"--i":4}} />
+            </div>
+          </div>
+
+          <div className={styles.aboutText}>
+            I am a 4th year nanotechnology engineering student at the University of Waterloo.
+          </div>
+        </div>
+      </section>
+
       
         
       </main>
